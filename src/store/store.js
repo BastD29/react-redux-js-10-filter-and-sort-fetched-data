@@ -1,12 +1,12 @@
 import { applyMiddleware, legacy_createStore as createStore } from "redux";
 import createSagaMiddleware from "redux-saga";
-import dataSaga from "./sagas";
-import dataReducer from "./reducer";
+import campaignReducer from "./reducer";
+import campaignSaga from "./sagas";
 
 const sagaMiddleware = createSagaMiddleware();
 
-const store = createStore(dataReducer, applyMiddleware(sagaMiddleware));
+const store = createStore(campaignReducer, applyMiddleware(sagaMiddleware));
 
-sagaMiddleware.run(dataSaga);
+sagaMiddleware.run(campaignSaga);
 
 export default store;
